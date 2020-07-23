@@ -34,3 +34,17 @@ var SavedProcessFile string = getSavedProcessFilePath()
 // Mac: ~/Library/Preferences/nyrna_config.json
 // Windows: %LOCALAPPDATA%\nyrna_config.json
 var ConfigFilePath string = xdg.ConfigHome
+
+// DataHome is the XDG path for data files
+// Linux: ~/.local/share/Nyrna
+// Mac: ~/Library/Application Support/Nyrna
+// Windows: %LOCALAPPDATA%\Nyrna
+func DataHome() (DataHomePath string) {
+	var DataHome string
+	if OS == "linux" {
+		DataHome = xdg.DataHome + "/Nyrna/"
+	} else if OS == "windows" {
+		DataHome = xdg.DataHome + "\\Nyrna\\"
+	}
+	return DataHome
+}
