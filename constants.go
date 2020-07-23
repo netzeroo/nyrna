@@ -48,3 +48,9 @@ func DataHome() (DataHomePath string) {
 	}
 	return DataHome
 }
+
+// PSLIST is the location of pslist64.exe
+var PSLIST string = DataHome() + "pslist64.exe"
+
+// PSSUSPEND is the location of pssuspend64.exe
+var PSSUSPEND string = DataHome() + "pssuspend64.exe"
